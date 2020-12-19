@@ -1,0 +1,225 @@
+* {
+    // box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+i {
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    // background-color: blue;
+}
+
+#headOne {
+    // float: left;
+    width: 100%;
+    height: 73px;
+    // margin: 0 auto;
+    // background-color: blue;
+    border-bottom: 2px solid red;
+
+    .head {
+        // float: left;
+        // width: 290px;
+        height: 70px;
+        width: 1100px;
+        margin: 0 auto;
+
+        h1 {
+            float: left;
+            width: 290px;
+            height: 70px;
+
+            a {
+                float: left;
+                width: 290px;
+                height: 70px;
+                display: block;
+                background: url(../img/modules.png) no-repeat;
+                background-position: 0 -47px;
+
+            }
+        }
+
+        .leftR {
+            // background-color: pink;
+            width: 800px;
+            height: 70px;
+            // margin-left: 330px;
+            float: left;
+
+            .seach {
+                width: 302px;
+                height: 35px;
+                margin-top: 15px;
+                margin-left: 330px;
+                // line-height: 70px;
+                float: left;
+                background: url(../img/modules.png);
+
+                input {
+                    // color: pink;
+                    float: left;
+                    border: 0;
+                    outline: 0;
+                    background-color: rgba (0, 0, 0, 0);
+                    margin-top: 10px;
+                    // line-height: 70px;
+                    margin-left: 30px;
+                }
+            }
+
+            .shop {
+                float: left;
+                margin-top: 10px;
+                margin-left: 20px;
+                // line-height: 70px;
+                width: 45px;
+                height: 42px;
+                background: url(../img/2020-12-07_172559_03.png);
+            }
+
+            .username {
+                float: left;
+                margin-top: 12px;
+                margin-left: 20px;
+                // line-height: 70px;
+                width: 45px;
+                height: 38px;
+                background: url(../img/2020-12-07_172559_06.png);
+            }
+        }
+    }
+}
+
+.middle_nav {
+    padding-top: 50px;
+    width: 1100px;
+    border: 1px solid gray;
+    text-align: center;
+    margin: 0 auto;
+    height: 800px;
+    // margin-bottom: 20px;
+
+    .m_z {
+        width: 540px;
+        height: 320px;
+        border: 1px solid gray;
+        margin: 20px auto;
+
+        .m_zl {
+            margin-top: 40px;
+            width: 300px;
+            height: 180px;
+            border-right: 1px dashed gray;
+            float: left;
+
+            img {
+                // margin-top: 20px;
+            }
+
+            .m_zlo {
+                width: 250px;
+                height: 30px;
+                margin-top: 20px;
+                background-color: blue;
+            }
+
+            .m_zlt {
+                width: 250px;
+                height: 30px;
+                margin-top: 20px;
+                background-color: wheat;
+            }
+        }
+
+        .m_zr {
+            margin-top: 20px;
+        }
+
+        p {
+            margin-top: 30px;
+        }
+    }
+
+}
+
+.footer_b {
+    padding-top: 30px;
+    background-color: #f2f2f2;
+    width: 1100px;
+    margin: 0 auto;
+    font-size: 12px;
+    height: 160px;
+    // overflow: hidden;
+
+    .footer_l {
+        float: left;
+
+        p {
+            color: #666666;
+            height: 24px;
+
+            a {
+                color: gray;
+            }
+        }
+    }
+
+    .footer_r {
+        padding-top: 30px;
+
+        li {
+            float: right;
+            font-size: 0;
+            margin-right: 45px;
+
+            .b_one {
+                display: block;
+                width: 60px;
+                height: 70px;
+                background: url(../img/foot_enter.png);
+                background-position: -60px -80px;
+            }
+
+            .b_two {
+                display: block;
+                width: 60px;
+                height: 70px;
+                background: url(../img/foot_enter.png);
+                background-position: 0px -80px;
+            }
+
+            .b_three {
+                display: block;
+                width: 60px;
+                height: 70px;
+                background: url(../img/foot_enter.png);
+                background-position: 0px 0px;
+            }
+
+            .b_four {
+                display: block;
+                width: 60px;
+                height: 70px;
+                background: url(../img/foot_enter.png);
+                background-position: -60px 0px;
+            }
+        }
+    }
+
+}

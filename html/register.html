@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:visited {
+            color: blue;
+        }
+
+        #showName {
+            color: yellowgreen;
+        }
+
+        #mask {
+            position: fixed;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            background: rgba(0, 0, 0, 0.3);
+            display: none;
+        }
+
+        #mask .login {
+            position: absolute;
+            width: 450px;
+            height: 250px;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        .login .title {
+            height: 30px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            cursor: move;
+        }
+
+        .login button {
+            border: none;
+            background: #fff;
+            outline: none;
+            font-weight: bold;
+        }
+
+        .login #closeBtn {
+            cursor: pointer;
+        }
+
+        .login p {
+            text-align: center;
+        }
+
+        .login p label {
+            width: 80px;
+            text-align: right;
+            display: inline-block;
+        }
+
+        .login p input[id] {
+            width: 230px;
+            height: 20px;
+        }
+
+        .login p span {
+            font-size: 12px;
+            color: red;
+            display: inline-block;
+            width: 100px;
+        }
+
+        .login #loginBtn {
+            width: 100px;
+            height: 30px;
+            background: #2196F3;
+            border: 1px solid #ccc;
+            color: #fff;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        你好
+        <span id="showName"></span>
+        欢迎来到国家信息安全系统,请先
+        <a href="" id="btn">登录</a>
+    </div>
+
+    <div id="mask">
+        <div class="login">
+            <div class="title">
+                <button>注册登录</button>
+                <button id="closeBtn">X</button>
+            </div>
+            <form action="">
+                <p>
+                    <label for="">用户民：</label>
+                    <input type="text" id="userName">
+                    <span></span>
+                </p>
+                <p>
+                    <label for="password">密码：</label>
+                    <input type="password" id="password">
+                    <span></span>
+                </p>
+                <p>
+                    <input type="checkbox" class="checkbox">
+                    <label for="" style="width: 100px;">同意<a href="">保密协议</a> </label>
+                </p>
+                <p>
+                    <input disabled type="button" value="登录" id="loginBtn">
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let btn = document.querySelector('#btn');
+        let mask = document.querySelector('#mask');
+        let login = document.querySelector('.login');
+        let title = document.querySelector('.title');
+        let closeBtn = document.querySelector('#closeBtn');
+        let loginBtn = document.querySelector('#loginBtn');
+        let checkbox = document.querySelector('.checkbox');
+        let showName = document.querySelector('#showName');
+
+        btn.onclick = event => {
+            let e = event || window.event;
+            e.returnValue = false;
+            mask.style.display = 'block';
+            setStyle();
+        }
+        window.onresize = setStyle;
+
+        closeBtn.onclick = () => mask.style.display = 'none';
+
+        document.onkeyup = event => {
+            let e = event || window.event;
+            if (e.keyCode === 27) mask.style.display = 'none';
+        }
+
+        title.onmousedown = (event) => {
+            let e1 = event || window.event;
+            let x = e1.offsetX;
+            let y = e1.offsetY;
+            document.onmousemove = (e) => {
+                login.style.left = e.clientX - x + 'px';
+                login.style.top = e.clientY - y + 'px';
+            }
+        }
+
+        document.onmouseup = () => {
+            document.onmousemove = null;
+        }
+
+        function setStyle() {
+            login.style.left = (innerWidth - login.offsetWidth) / 2 + 'px';
+            login.style.top = (innerHeight - login.offsetHeight) / 2 + 'px';
+        }
+
+        // 验证匹配
+        let userName = document.querySelector('#userName');
+        let password = document.querySelector('#password');
+        let testObj = {};
+
+        userName.onchange = function () {
+            let userNameTest = /^[a-z][0-9A-Za-z]{5,11}$/i.test(userName.value);
+            if (!userNameTest) {
+                this.nextElementSibling.innerText = '用户名不正确';
+            } else {
+                testObj.userNameTest = userNameTest;
+                this.nextElementSibling.innerText = '';
+            }
+            chnage(testObj);
+        }
+        password.onchange = function () {
+            let passwordTest = /^[^\s]{6,18}$/.test(password.value);
+            if (!passwordTest) {
+                this.nextElementSibling.innerText = '密码验证不通过';
+            } else {
+                testObj.passwordTest = passwordTest;
+                this.nextElementSibling.innerText = '';
+            }
+            chnage(testObj);
+        }
+        checkbox.onclick = function () {
+            testObj.checkbox = this.checked;
+            chnage(testObj);
+        }
+
+        loginBtn.onclick = function () {
+            showName.innerText = userName.value;
+            mask.style.display = 'none';
+        }
+
+        function chnage(testObj) {
+            if (testObj.checkbox && testObj.userNameTest && testObj.passwordTest) {
+                loginBtn.disabled = false;
+            } else {
+                loginBtn.disabled = true;
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

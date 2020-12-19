@@ -1,0 +1,309 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+i {
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#headOne {
+  width: 100%;
+  height: 73px;
+  border-bottom: 2px solid red;
+}
+
+#headOne .head {
+  height: 70px;
+  width: 1100px;
+  margin: 0 auto;
+}
+
+#headOne .head h1 {
+  float: left;
+  width: 290px;
+  height: 70px;
+}
+
+#headOne .head h1 a {
+  float: left;
+  width: 290px;
+  height: 70px;
+  display: block;
+  background: url(../img/modules.png) no-repeat;
+  background-position: 0 -47px;
+}
+
+#headOne .head .leftR {
+  width: 800px;
+  height: 70px;
+  float: left;
+}
+
+#headOne .head .leftR .seach {
+  width: 302px;
+  height: 35px;
+  margin-top: 15px;
+  margin-left: 330px;
+  float: left;
+  background: url(../img/modules.png);
+}
+
+#headOne .head .leftR .seach input {
+  float: left;
+  border: 0;
+  outline: 0;
+  background-color: rgba 0, 0, 0, 0;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+#headOne .head .leftR .shop {
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+  width: 45px;
+  height: 42px;
+  background: url(../img/2020-12-07_172559_03.png);
+}
+
+#headOne .head .leftR .username {
+  float: left;
+  margin-top: 12px;
+  margin-left: 20px;
+  width: 45px;
+  height: 38px;
+  background: url(../img/2020-12-07_172559_06.png);
+}
+
+.middle_nav {
+  padding-top: 50px;
+  width: 1100px;
+  border: 1px solid gray;
+  text-align: center;
+  margin: 0 auto;
+  height: 800px;
+}
+
+.middle_nav .m_z {
+  width: 540px;
+  height: 320px;
+  border: 1px solid gray;
+  margin: 20px auto;
+}
+
+.middle_nav .m_z .m_zl {
+  margin-top: 40px;
+  width: 300px;
+  height: 180px;
+  border-right: 1px dashed gray;
+  float: left;
+}
+
+.middle_nav .m_z .m_zl .m_zlo {
+  width: 250px;
+  height: 30px;
+  margin-top: 20px;
+  background-color: blue;
+}
+
+.middle_nav .m_z .m_zl .m_zlt {
+  width: 250px;
+  height: 30px;
+  margin-top: 20px;
+  background-color: wheat;
+}
+
+.middle_nav .m_z .m_zr {
+  margin-top: 20px;
+}
+
+.middle_nav .m_z p {
+  margin-top: 30px;
+}
+
+.footer_b {
+  padding-top: 30px;
+  background-color: #f2f2f2;
+  width: 1100px;
+  margin: 0 auto;
+  font-size: 12px;
+  height: 160px;
+}
+
+.footer_b .footer_l {
+  float: left;
+}
+
+.footer_b .footer_l p {
+  color: #666666;
+  height: 24px;
+}
+
+.footer_b .footer_l p a {
+  color: gray;
+}
+
+.footer_b .footer_r {
+  padding-top: 30px;
+}
+
+.footer_b .footer_r li {
+  float: right;
+  font-size: 0;
+  margin-right: 45px;
+}
+
+.footer_b .footer_r li .b_one {
+  display: block;
+  width: 60px;
+  height: 70px;
+  background: url(../img/foot_enter.png);
+  background-position: -60px -80px;
+}
+
+.footer_b .footer_r li .b_two {
+  display: block;
+  width: 60px;
+  height: 70px;
+  background: url(../img/foot_enter.png);
+  background-position: 0px -80px;
+}
+
+.footer_b .footer_r li .b_three {
+  display: block;
+  width: 60px;
+  height: 70px;
+  background: url(../img/foot_enter.png);
+  background-position: 0px 0px;
+}
+
+.footer_b .footer_r li .b_four {
+  display: block;
+  width: 60px;
+  height: 70px;
+  background: url(../img/foot_enter.png);
+  background-position: -60px 0px;
+}
+
+
+a:visited {
+  color: blue;
+}
+
+#showName {
+  color: yellowgreen;
+}
+
+#mask {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+#mask .login {
+  position: absolute;
+  width: 450px;
+  height: 250px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.login .title {
+  height: 30px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  cursor: move;
+}
+
+.login button {
+  border: none;
+  background: #fff;
+  outline: none;
+  font-weight: bold;
+}
+
+.login #closeBtn {
+  cursor: pointer;
+}
+
+.login p {
+  text-align: center;
+}
+
+.login p label {
+  width: 80px;
+  text-align: right;
+  display: inline-block;
+}
+
+.login p input[id] {
+  width: 230px;
+  height: 20px;
+}
+
+.login p span {
+  font-size: 12px;
+  color: red;
+  display: inline-block;
+  width: 100px;
+}
+
+.login #loginBtn {
+  width: 100px;
+  height: 30px;
+  background: #2196F3;
+  border: 1px solid #ccc;
+  color: #fff;
+  opacity: 0.5;
+}
+
+
+#login {
+  position: fixed;
+  top: 200px;
+  bottom: 0px;
+  left: 725px;
+  right: 0px;
+  width: 450px;
+  height: 180px;
+  /* background: rgba(253, 252, 252, 0.3); */
+  background-color: pink;
+  display: none;
+
+}
+
+.title {
+  height: 30px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  cursor: move;
+
+  /* background-color: pink;// */
+}
+
+.title .zhuce_g {
+  cursor: pointer;
+}

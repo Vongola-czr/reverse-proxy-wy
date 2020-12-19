@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./ajax.js"></script>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        let box = document.querySelector('.box');
+        //获取本地json文件数据
+        window.onload = function () {
+            var url = "http://localhost/facai.com/PHP/Json/list.json"
+            var request = new XMLHttpRequest();
+            request.open("get", url); /*设置请求方法与路径*/
+            request.send(null); /*不发送数据到服务器*/
+            request.onload = function () {
+                /*XHR对象获取到返回信息后执行*/
+                if (request.status == 200) {
+                    /*返回状态为200，即为数据获取成功*/
+                    var json = JSON.parse(request.responseText);
+                    // for (var i = 0; i < json.length; i++) {
+                    //     console.log(json[i].name);
+                    // }
+                    console.log(json.data.products);
+                    inData(json.data.products);
+                    // renderHtml(json)
+                }
+            }
+        }
+
+        // //通过获取的数据遍历--pAjax传给php
+        function inData(arr) {
+            console.log(arr);
+            arr.forEach(item => {
+
+                pAjax({
+                    url: "./inData.php",
+                    data: {
+                        shopname: item.name,
+                        pic: item.coverUrl,
+                        price: item.minPrice,
+                        txt: item.couponLabelDesc,
+                        u_id: item.id,
+                    }
+                }).then(res => {
+                    console.log(res);
+
+                })
+
+            })
+        }
+
+        //渲染
+        function renderHtml(data) {
+            console.log(data);
+            data.forEach((item, index) => {
+                let str = '';
+                str = `
+                <p>${item.ExtensionCode}</p>
+                <p>${item.ProductName}</p>
+                <p>${item.ProductBrief}</p>
+                <p>${item.ShopPrice}</p>
+                <p>${item.Bang}</p>
+                <p>${item.ID}</p>
+                <p>${item.SellNumCount}</p>
+                <img src="http://www.33cake.com/UserFiles/Product/${item.ProductThumb}" alt="">
+        `
+                box.innerHTML += str;
+            })
+
+        }
+    </script>
+</body>
+
+</html>

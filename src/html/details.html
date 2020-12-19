@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/details.css">
+    <script src="../js/enlarge.js"></script>
+
+    <script src="../js/utils.js"></script>
+
+    <!-- <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* height: 2000px; */
+        }
+        
+        .nav {
+            width: 1100px;
+            margin: 0 auto;
+        }
+
+        .box {
+            float: left;
+            width: 440px;
+            margin-top: 50px;
+            /* display: flex; */
+            /* flex-direction: column; */
+            position: relative;
+        }
+
+        .box>.show {
+            width: 440px;
+            height: 440px;
+            border: 1px solid #333;
+            position: relative;
+            text-align: center;
+        }
+
+        .box>.show>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .box>.show>.mask {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            opacity: .4;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+
+            display: none;
+        }
+
+        .box>.list {
+            /* width: 100%; */
+            flex: 1;
+            width: 440px;
+            overflow: hidden;
+            display: flex;
+            /* justify-content: flex-start; */
+            /* align-items: center; */
+            box-sizing: border-box;
+            /* padding: 20px; */
+            padding-top: 20px;
+        }
+
+        .box>.list>p {
+            width: 76px;
+            height: 76px;
+            border: 2px solid #333;
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        .box>.list>p.active {
+            border-color: red;
+        }
+
+        .box>.enlarge {
+            /* 容器 与背景图的比例为 1 ：2 */
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 0px;
+            left: 450px;
+            background-size: 750px 1000px;
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            border: 1px solid #ccc;
+            background-image: url(../img/images/img1_800.jpg);
+            display: none;
+        }
+
+        .tit {
+            float: left;
+            margin-left: 80px;
+            margin-top: 50px;
+            width: 580px;
+        }
+
+        .tit .tit_b {
+            font-size: 25px;
+            /* float: left; */
+        }
+
+        .tit .tit_o {
+            /* width: 30px; */
+            /* line-height: 30px; */
+            /* height: 30px; */
+            /* background-color: gray; */
+            font-size: 14px;
+            color: gray;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .tit .tit_t {
+            font-size: 24px;
+            color: red;
+        }
+
+        .tit .tit_f {
+            height: 30px;
+            margin-left: 50px;
+        }
+
+        .tit .tit_f_ff {
+            width: 520px;
+            background-color: rgb(233, 225, 225);
+            height: 28px;
+            line-height: 28px;
+        }
+
+        .tit .tit_f_o {
+            float: left;
+            /* margin-top: 20px; */
+            height: 30px;
+            line-height: 30px;
+            font-size: 12px;
+            color: gray;
+        }
+
+        .tit .tit_f_t {
+            float: left;
+            margin-top: 15px;
+            margin-right: 18px;
+            color: gray;
+
+        }
+
+        .tit .tit_s li {
+            /* float: left; */
+            display: inline-block;
+            width: 60px;
+            text-align: center;
+            /* margin-left: 15px; */
+            margin-right: 15px;
+            border: 1px solid gray;
+            /* height: 10px; */
+        }
+
+        .tit .tit_s {
+            float: left;
+            margin-top: 15px;
+            width: 520px;
+            height: 28px;
+        }
+
+        .tit .nav_num {
+            float: left;
+            margin-right: 18px;
+        }
+
+        .tit .nav_control {
+            width: 100%;
+            background-color: pink;
+            height: 28px;
+        }
+
+        .tit .server {
+            color: gray;
+
+        }
+
+        .tit .nav_control .tot {
+            border-right: 0px;
+            display: inline-block;
+            text-align: center;
+            font-size: 15px;
+            width: 35px;
+            float: left;
+            height: 26px;
+            border: 1px solid gray;
+        }
+
+        .tit .nav_control .tot_add {
+
+            display: inline-block;
+            float: left;
+            text-align: center;
+            font-size: 15px;
+            width: 35px;
+            height: 26px;
+            border: 1px solid gray;
+        }
+
+        .tit .nav_control .tot_txt {
+            border: 1px solid #000;
+            float: left;
+            /* padding-left: 5px; */
+            width: 60px;
+            outline: none;
+            /* border-top: 0px; */
+            /* border: 0px; */
+            border-left: 0px;
+            border-right: 0px;
+            height: 26px;
+            text-align: center;
+        }
+
+        .tit .tit_f .tit_f_lo {
+            display: inline-block;
+            width: 44px;
+            text-align: center;
+            height: 14px;
+            line-height: 14px;
+            /* margin: 2px 0; */
+            border: 1px solid red;
+            font-size: 12px;
+        }
+
+        .tit .tit_f .tit_f_lt {
+            font-size: 12px;
+        }
+
+        .tit .tit_f .tit_f_lf {
+            font-size: 12px;
+        }
+
+        .tit .tit_f .tit_f_ls {
+            font-size: 12px;
+            color: blue;
+        }
+
+        .nav .button_o {
+            float: left;
+            margin-left: 80px;
+        }
+
+        .nav .button_o .buy {
+            text-align: center;
+            color: red;
+            font-size: 18px;
+            width: 170px;
+            height: 50px;
+            background-color: white;
+            border: solid 2px red
+        }
+
+        .nav .button_o .add_car {
+            text-align: center;
+            font-size: 18px;
+            color: white;
+            width: 170px;
+            height: 50px;
+            background-color: red;
+            border: solid 2px red
+        }
+
+        .commodity_x {
+            width: 1100px;
+            margin: 0 auto;
+        }
+
+        .commodity_x .commodity_l {
+            /* float: left; */
+            margin-top: 20px;
+            display: inline-block;
+            width: 700px;
+            margin-right: 50px;
+        }
+
+        .commodity_x .commodity_l h2 {
+            height: 60px;
+            line-height: 60px;
+            border-bottom: 1px solid red;
+        }
+
+        .commodity_x .commodity_l p {
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        .commodity_x .commodity_r {
+            vertical-align: top;
+            margin-top: 20px;
+            display: inline-block;
+            font-size: 25px;
+            width: 340px;
+            /* height: 60px; */
+            /* line-height: 60px; */
+
+        }
+
+        .commodity_x .commodity_r h2 {
+            width: 340px;
+            height: 60px;
+            border-bottom: 1px solid red;
+        }
+
+        .commodity_x .commodity_r figure {
+            margin-top: 20px;
+        }
+
+        .commodity_x .commodity_r figure img {
+            float: left;
+            width: 100px;
+            height: 100px;
+        }
+
+        .commodity_x .commodity_r figure .f_o {
+            float: left;
+            width: 200px;
+            font-size: 12px;
+            color: black;
+            margin-left: 15px;
+            margin-top: 15px;
+        }
+
+        .commodity_x .commodity_r figure .f_o .sp_o .sp_t {
+            width: 32px;
+            height: 18px;
+
+            border: 1px solid red;
+        }
+
+        .commodity_x .commodity_r figure .f_o .sp_o .a_o {
+            color: black;
+            font-size: 14px;
+        }
+
+        .commodity_x .commodity_r figure .f_o .price_n {
+            font-size: 16px;
+            color: red;
+            margin-top: 15px;
+        }
+    </style> -->
+
+
+</head>
+
+<body>
+
+    <header id="headOne">
+        <section class="head">
+            <h1 class="Logo">
+                <a href="../html/index.html"></a>
+            </h1>
+
+
+            <div class="leftR">
+                <div class="seach">
+                    <input type="text" placeholder="i19真无线">
+                </div>
+
+                <div class="shop">
+
+                </div>
+                <div class="username">
+
+                </div>
+            </div>
+        </section>
+    </header>
+
+
+    <section class="x_zhuti">
+        <!-- 
+        <section class="nav_tit">
+            <div class="nav_l">
+                <span class="index_l"><a href="">首页</a></span>
+                <span class="index_t"><i></i><a href="">热销爆品</a></span>
+                <span class="index_s"><i></i><a href="">漫步者（EDIFIER）MINI-BUDS 真无线蓝牙5.0小巧入耳式手机音乐通话耳机</a></span>
+            </div>
+            <div class="nav_r"><i></i><a href="分享"></a></div>
+
+        </section>
+
+        <section class="nav">
+            <div class="box">
+                <div class="show">
+                    <img src="../img/images/img1_400.jpg">
+                    <div class="mask"></div>
+                </div>
+
+                <div class="list">
+                    <p class="active">
+                        <img 
+
+                        midelImg="../img/images/img1_400.jpg" 
+
+                        bigImg="../img/images/img1_800.jpg"
+
+                        src="../img/images/img1_76.jpg">
+                    </p>
+                    <p>
+                        <img midelImg="../img/images/img2_400.jpg" bigImg="../img/images/img2_800.jpg"
+                            src="../img/images/img2_76.jpg">
+                    </p>
+                    <p>
+                        <img midelImg="../img/images/img3_400.jpg" bigImg="../img/images/img3_800.jpg"
+                            src="../img/images/img3_76.jpg">
+                    </p>
+                    <p>
+                        <img midelImg="../img/images/img4_400.jpg" bigImg="../img/images/img4_800.jpg"
+                            src="../img/images/img4_76.jpg">
+                    </p>
+                    <p>
+                        <img midelImg="../img/images/img5_400.jpg" bigImg="../img/images/img5_800.jpg"
+                            src="../img/images/img5_76.jpg">
+                    </p>
+                    <p>
+                        <img midelImg="../img/images/img6_400.jpg" bigImg="../img/images/img6_800.jpg"
+                            src="../img/images/img6_76.jpg">
+                    </p>
+                    <p>
+                        <img midelImg="../img/images/img7_400.jpg" bigImg="../img/images/img7_800.jpg"
+                            src="../img/images/img7_76.jpg">
+                    </p>
+                </div>
+
+
+                <div class="enlarge"></div>
+            </div>
+
+
+            <div class="tit">
+                <h2 class="tit_b">漫步者（EDIFIER）MINI-BUDS 真无线蓝牙5.0小巧入耳式手机音乐通话耳机</h2>
+                <p class="tit_o">高通蓝牙5.0，aptx解码；CVC8.0通话降噪；长效续航；小巧便携舒适佩戴；Type-C充电接口</p>
+                <p class="tit_t">¥199</p>
+                <p class="cuxiao">促销 <span>手慢无</span>
+                    <span>50元</span>
+                    <span>双十二限时超享,无门槛</span>
+                    <span>领券</span></p>
+
+                <ul class="tit_s">
+                    <li class="a">颜色</li>
+                    <li>雾霾蓝</li>
+                    <li>冰川灰</li>
+                    <li>烟灰粉</li>
+                </ul>
+
+                <div class="nav_control">
+                    <span class="nav_num">数量</span>
+                    <input type="button" placeholder="-" value="-">
+                    <input type="text" value="0" class="b">
+                    <input type="button" placeholder="+" value="+">
+                </div>
+
+                <ul class="server">
+                    <li class="b">服务</li>
+                    <li>不支持7天无理由退货</li>
+                    <li>满119包邮</li>
+                    <li>商家发货</li>
+                </ul>
+            </div>
+            <div class="button_o">
+                <button class="buy">立即购买</button>
+                <button class="add_car">加入购物车</button>
+            </div>
+        </section>
+
+
+        <section class="commodity_x">
+            <section class="commodity_l">
+                <h2>商品详情</h2>
+                <p>正品低价 品质保证</p>
+                <p>装箱清单：耳机*1对，充电仓*1，充电线*1，耳套*3对，说明书&保修卡*1
+
+                </p>
+                <p>该产品一经拆封，影响二次销售，非质量问题不接受7天无理由退换货。由于产品与皮肤接触，请确认需求后拆封使用。</p>
+                <p>新疆、西藏地区因物流原因可能无法配送，敬请谅解。
+
+                </p>
+                <img src="../img/images/109951165071075433.jpg" alt="">
+            </section>
+
+            <section class="commodity_r">
+                <h2> 热门商品</h2>
+                <figure>
+                    <img src="../img/109951165392256869.jpg" alt="">
+                    <figcaption class="f_o">
+                        <span class="sp_o">
+                            <span class="sp_t">特价</span>
+                            <a href="" class="a_o"> 【现货】网易云音乐2021年音乐人年历日历礼盒装</a>
+                        </span>
+                        <p class="price_n">$168</p>
+                    </figcaption>
+                </figure>
+            </section>
+        </section> -->
+
+    </section>
+
+
+    <script src="../js/details.js"></script>
+</body>
+
+</html>
